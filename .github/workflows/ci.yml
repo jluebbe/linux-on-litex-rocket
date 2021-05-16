@@ -15,7 +15,7 @@ jobs:
           - board: 'trellisboard'
             args: '--cpu-variant linuxq --sys-clk-freq 50e6 --with-ethernet --with-sdcard'
           - board: 'lambdaconcept_ecpix5'
-            args: '--cpu-variant linuxd --sys-clk-freq 50e6 --with-ethernet --with-sdcard'
+            args: '--build --cpu-variant linuxd --sys-clk-freq 50e6 --with-ethernet --with-sdcard'
           - board: 'lattice_versa_ecp5'
             args: '--cpu-variant linuxd --sys-clk-freq 50e6 --with-ethernet'
     steps:
