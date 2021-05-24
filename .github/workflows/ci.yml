@@ -1,7 +1,7 @@
 name: ci
 
-on: 
-  push: 
+on:
+  push:
   pull_request:
   workflow_dispatch:
 
@@ -16,9 +16,9 @@ jobs:
           - board: 'digilent_nexys4ddr'
             args: '--cpu-variant linux --sys-clk-freq 50e6 --with-ethernet --with-sdcard'
           - board: 'trellisboard'
-            args: '--cpu-variant linuxq --sys-clk-freq 50e6 --with-ethernet --with-sdcard'
+            args: '--cpu-variant linuxq --sys-clk-freq 50e6 --with-ethernet --with-sdcard --build'
           - board: 'lambdaconcept_ecpix5'
-            args: '--cpu-variant linuxd --sys-clk-freq 50e6 --with-ethernet --with-sdcard'
+            args: '--cpu-variant linuxd --sys-clk-freq 50e6 --with-ethernet --with-sdcard --build'
           - board: 'lattice_versa_ecp5'
             args: '--cpu-variant linuxd --sys-clk-freq 50e6 --with-ethernet'
     steps:
