@@ -45,7 +45,7 @@
 	};
 	L8: memory@80000000 {
 		device_type = "memory";
-		reg = <0x80000000 0x08000000>; /* 128MB (nexys4ddr/ecp5versa) */
+		reg = <0x80000000 0x10000000>; /* 256MB (arty7) */
 	};
 	L12: soc {
 		#address-cells = <1>;
@@ -91,9 +91,9 @@
 			compatible = "litex,soc-controller";
 			reg = <0x12000000 0xc>;
 		};
-		liteuart0: serial@12006800 {
+		liteuart0: serial@0x12004000 {
 			compatible = "litex,liteuart";
-			reg = <0x12006800 0x100>;
+			reg = <0x12004000 0x100>;
 			interrupt-parent = <&L1>;
 			interrupts = <1>;
 		};
@@ -106,17 +106,6 @@
 			rx-fifo-depth = <2>;
 			interrupt-parent = <&L1>;
 			interrupts = <3>;
-		};
-		mmc0: mmc@12005000 {
-			compatible = "litex,mmc";
-			reg = <0x12005000 0x100>,
-				<0x12003800 0x100>,
-				<0x12003000 0x100>,
-				<0x12004800 0x100>,
-				<0x12004000 0x100>;
-			bus-width = <0x04>;
-			interrupt-parent = <&L1>;
-			interrupts = <4>;
 		};
 	};
 };
